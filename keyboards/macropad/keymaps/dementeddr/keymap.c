@@ -16,10 +16,17 @@
 
 #include QMK_KEYBOARD_H
 
+
+enum custom_keycodes {
+    PLACEHOLDER = SAFE_RANGE,
+    CSV_CC,
+};
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(KC_MUTE, KC_7, KC_8, KC_9, KC_4, KC_5, KC_6, KC_1, KC_2, KC_3, LT(1,KC_P0), KC_DOT, LT(2,KC_PENT)),
     [1] = LAYOUT(KC_MUTE, KC_SLSH, LSFT(KC_8), KC_MINS, KC_NO, KC_NO, LSFT(KC_EQL), KC_NO, KC_NO, KC_EQL, KC_NO, KC_PDOT, KC_PENT),
-    [2] = LAYOUT(KC_MUTE, KC_NO, KC_NO, LCA(KC_DEL), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, RCS(KC_RGHT), RCS(KC_V), KC_NO)
+    [2] = LAYOUT(KC_MUTE, KC_NO, KC_NO, LCA(KC_DEL), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, CSV_CC, RCS(KC_V), KC_NO)
 };
 
 
@@ -31,6 +38,18 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 };
 #endif
 
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case: CSV_CC:
+            if (record->event.pressed) {
+                tap_code16(RCS(KC_RIGHT));
+                tap_code16(RCTL(KC_C));
+                return false;
+            }
+            break;
+    }
+    return true;
+}
 
 #ifdef OLED_ENABLE
 static void render_qmk_logo(void) {

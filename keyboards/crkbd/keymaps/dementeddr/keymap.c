@@ -25,7 +25,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      KC_LCTL, LCTL_T(KC_Z), KC_X,  KC_C,  KC_V,   KC_B,                         KC_N,    KC_M,    KC_COMM, KC_DOT,  RCTL_T(KC_SLSH),  KC_RCTL,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                     MO(1), KC_BACKSPACE, LT(3,KC_TAB), KC_ENT, LT(2,KC_SPC),   MO(4)
+                                MO(1), LT(1,KC_BACKSPACE), LT(3,KC_TAB), KC_ENT, LT(2,KC_SPC),   MO(4)
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -37,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      KC_LCTL, LCTL_T(KC_PERC), KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD,              KC_PLUS, KC_1,    KC_2,    KC_3,   RCTL_T(KC_DOT), KC_RCTL,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                        KC_NO,  KC_BACKSPACE, KC_TAB,  KC_ENT,  KC_SPC,  KC_NO
+                                        KC_NO,  KC_BACKSPACE, KC_TAB,  KC_ENT,  KC_0,    KC_0
                                       //`--------------------------'  `--------------------------'
   ),
 
